@@ -17,19 +17,6 @@ namespace SPDVIBasicWinForms4
         {
             InitializeComponent();
         }
-
-        private void sumButton_Click(object sender, EventArgs e)
-        {
-            operationType = 0;
-            operationBox.Text = "+";
-        }
-
-        private void subsButton_Click(object sender, EventArgs e)
-        {
-            operationType = 1;
-            operationBox.Text = "-";
-        }
-
         private void calculateButton_Click(object sender, EventArgs e)
         {
             try
@@ -57,6 +44,20 @@ namespace SPDVIBasicWinForms4
             operationBox.Clear();
             resultBox.Clear();
             operationType = -1;
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBox1.SelectedItem.ToString() == "+")
+            {
+                operationType = 0;
+                operationBox.Text = "+";
+            }
+            else
+            {
+                operationType = 1;
+                operationBox.Text = "-";
+            }
         }
     }
 }
